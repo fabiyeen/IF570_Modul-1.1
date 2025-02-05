@@ -72,6 +72,16 @@ fun OnboardingScreen(
 }
 
 @Composable
+private fun Greetings(
+    modifier: Modifier = Modifier,
+    names: List<String> = listOf("World", "Compose")
+) {
+    Column(modifier = modifier.padding(vertical = 4.dp)) {
+        for (name in names) {
+            Greeting(name = name)
+        }
+    }
+}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
