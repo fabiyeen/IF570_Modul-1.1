@@ -83,6 +83,14 @@ private fun Greetings(
     }
 }
 
+@Preview(showBackground = true, widthDp = 320, heightDp = 320)
+@Composable
+fun OnboardingPreview() {
+    BasicsCodelabTheme {
+        OnboardingScreen(onContinueClicked = {})
+    }
+}
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     val expanded = remember { mutableStateOf(false) }
@@ -108,19 +116,19 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true, widthDp = 320, heightDp = 320)
-@Composable
-fun OnboardingPreview() {
-    BasicsCodelabTheme {
-        MyApp()
-    }
-}
-
 @Preview(showBackground = true, widthDp = 320)
 @Composable
 fun GreetingPreview() {
     BasicsCodelabTheme {
         MyApp()
+    }
+}
+
+@Preview
+@Composable
+fun MyAppPreview() {
+    BasicsCodelabTheme {
+        MyApp(Modifier.fillMaxSize())
     }
 }
 
