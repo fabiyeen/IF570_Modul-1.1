@@ -50,7 +50,28 @@ fun MyApp(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun OnboardingScreen(
+    onContinueClicked: () -> Unit,
+    modifier: Modifier = Modifier
+) {
 
+    Column(
+        modifier = modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("Welcome to the Basics Codelab!")
+        Button(
+            modifier = Modifier.padding(vertical = 24.dp),
+            onClick = onContinueClicked
+        ) {
+            Text("Continue")
+        }
+    }
+}
+
+@Composable
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -73,26 +94,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             ) {
                 Text(if (expanded.value) "Show less" else "Show more")
             }
-        }
-    }
-}
-
-@Composable
-fun OnboardingScreen(modifier: Modifier = Modifier, onContinueClicked: () -> Unit) {
-    // TODO: This state should be hoisted
-    var shouldShowOnBoarding by remember { mutableStateOf(true) }
-
-    Column(
-        modifier = modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("Welcome to the Basics Codelab!")
-        Button(
-            modifier = Modifier.padding(vertical = 24.dp),
-            onClick = { shouldShowOnBoarding = false }
-        ) {
-            Text("Continue")
         }
     }
 }
